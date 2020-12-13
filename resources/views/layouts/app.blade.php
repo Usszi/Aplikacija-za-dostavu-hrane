@@ -20,31 +20,31 @@
   <div class="collapse navbar-collapse" id="navbarNav">
     <ul class="navbar-nav">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link" href="{{ route('home') }}">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="/users">Users</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/cities">Cities</a>
+        <a class="nav-link" href="{{ route('cities.index') }}">Cities</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/deliverers">Deliverers</a>
+        <a class="nav-link" href="{{ route('deliverers.index') }}">Deliverers</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/messages">Messages</a>
+        <a class="nav-link" href="{{ route('messages.index') }}">Messages</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/neighborhoods">Neighborhoods</a>
+        <a class="nav-link" href="{{ route('neighborhoods.index') }}">Neighborhoods</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/orders">Orders</a>
+        <a class="nav-link" href="{{ route('orders.index') }}">Orders</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/restaurants">Restaurants</a>
+        <a class="nav-link" href="{{ route('restaurants.index') }}">Restaurants</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="/stores">Stores</a>
+        <a class="nav-link" href="{{ route('stores.index') }}">Stores</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Pricing</a>

@@ -18,7 +18,7 @@ class DelivererController extends Controller
     public function show($id)
     {
         $deliverer = Deliverer::findOrFail($id);
-        dd($deliverer);
+        return view('deliverers.show',compact('deliverer')); 
     }
 
 }

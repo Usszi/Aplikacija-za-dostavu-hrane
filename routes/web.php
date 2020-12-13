@@ -22,7 +22,7 @@ use App\Http\Controllers\MessageController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('home');
 
 Route::resource('cities',CityController::class);
 Route::resource('deliverers',DelivererController::class);

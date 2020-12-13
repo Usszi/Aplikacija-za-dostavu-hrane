@@ -17,6 +17,6 @@ class StoreController extends Controller
     public function show($id)
     {
         $store = Store::findOrFail($id);
-        dd($store);
+        return view('stores.show',compact('store')); 
     }
 }

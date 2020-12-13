@@ -16,6 +16,6 @@ class NeighborhoodController extends Controller
     public function show($id)
     {
         $neighborhood = Neighborhood::findOrFail($id);
-        dd($neighborhood);
+        return view('neighborhoods.show',compact('neighborhood')); 
     }
 }

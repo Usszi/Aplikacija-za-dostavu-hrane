@@ -16,6 +16,6 @@ class MessageController extends Controller
     public function show($id)
     {
         $message = Message::findOrFail($id);
-        dd($message);
+        return view('messages.show',compact('message')); 
     }
 }
