@@ -22,8 +22,7 @@ class StoreController extends Controller
     public function edit($id)
     {
         $store = Store::findOrFail($id);
-        $neighborhood = Neighborhood::pluck('name');
-        return view('stores.edit', compact('store','neighborhood'));
+        return view('stores.edit', compact('store'));
     }
 
     public function create()

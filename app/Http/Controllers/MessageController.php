@@ -21,8 +21,8 @@ class MessageController extends Controller
     public function edit($id)
     {
         $message = Message::findOrFail($id);
-        $user = User::pluck('name','surname','email','adress','gender','date_of_birth');
-        return view('messages.edit', compact('message','user'));
+        
+        return view('messages.edit', compact('message'));
     }
 
     public function create()

@@ -19,7 +19,7 @@
     <tr>
     <td>{{$store->id}}</td>
     <td>{{$store->name}}</td>
-    <td>{{$restaurant->adress}}</td>
+    <td>{{$store->adress}}</td>
     <td>{{$store->oib}}</td>
     <td>
     <a class="btn btn-outline-primary" href="{{ route('stores.show',['store' => $store->id]) }}">Details</a>

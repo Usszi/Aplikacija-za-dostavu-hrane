@@ -21,8 +21,7 @@ class NeighborhoodController extends Controller
     public function edit($id)
     {
         $neighborhood = Neighborhood::findOrFail($id);
-        $city = City::pluck('name');
-        return view('neighborhoods.edit', compact('neighborhood','city'));
+        return view('neighborhoods.edit', compact('neighborhood'));
     }
 
     public function create()
@@ -33,11 +32,7 @@ class NeighborhoodController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'name' => 'required|max:255',
-            'surname' => 'required|max:255',
-            'gender' => 'required|max:255',
-            'date_of_birth' => 'required|max:255',
-            'city_id' =>'required'
+            'name' => 'required|max:255'
         ]);
 
         $neighborhood = Neighborhood::findOrFail($id);
@@ -51,10 +46,7 @@ class NeighborhoodController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|unique:neighborhoods|max:255',
-            'surname' => 'required|unique:neighborhoods|max:255',
-            'gender' => 'required|unique:neighborhoods|max:255',
-            'date_of_birth' => 'required|unique:neighborhoods|max:255'
+            'name' => 'required|unique:cities|max:255'
         ]);
         $neighborhood = Neighborhood::create($validated);
         return view('neighborhoods.show', compact('neighborhood'));
