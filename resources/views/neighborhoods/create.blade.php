@@ -10,7 +10,7 @@
 
         <!-- country name -->
         <div class="form-group">
-            <label for="name">Name</label>
+            <label for="name">Neighborhood Name</label>
             <input value="{{ @old('name') }}" name="name" type="text" class="form-control" id="name">
             @if ($errors->has('name'))
                 <span class="text-danger">{{ $errors->first('name') }}</span>

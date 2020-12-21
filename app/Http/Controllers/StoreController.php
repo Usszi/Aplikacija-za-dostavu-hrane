@@ -22,7 +22,8 @@ class StoreController extends Controller
     public function edit($id)
     {
         $store = Store::findOrFail($id);
-        return view('stores.edit', compact('store'));
+        $neighborhood = Neighborhood::pluck('name');
+        return view('stores.edit', compact('store','neighborhood'));
     }
 
     public function create()
@@ -35,7 +36,8 @@ class StoreController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
             'adress' => 'required|max:255',
-            'oib' => 'required|max:255'
+            'oib' => 'required|max:255',
+            'neighborhood_id' =>'required'
         ]);
 
         $store = Store::findOrFail($id);

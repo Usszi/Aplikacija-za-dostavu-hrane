@@ -22,7 +22,8 @@ class RestaurantController extends Controller
     public function edit($id)
     {
         $restaurant = Restaurant::findOrFail($id);
-        return view('restaurants.edit', compact('restaurant'));
+        $neighborhood = Neighborhood::pluck('name');
+        return view('restaurants.edit', compact('restaurant','neighborhood'));
     }
 
     public function create()
@@ -35,7 +36,8 @@ class RestaurantController extends Controller
         $validated = $request->validate([
             'name' => 'required|max:255',
             'adress' => 'required|max:255',
-            'oib' => 'required|max:255'
+            'oib' => 'required|max:255',
+            'neighborhood_id' =>'required'
         ]);
 
         $restaurant = Restaurant::findOrFail($id);

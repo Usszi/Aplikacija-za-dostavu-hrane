@@ -21,7 +21,8 @@ class MessageController extends Controller
     public function edit($id)
     {
         $message = Message::findOrFail($id);
-        return view('messages.edit', compact('message'));
+        $user = User::pluck('name','surname','email','adress','gender','date_of_birth');
+        return view('messages.edit', compact('message','user'));
     }
 
     public function create()
@@ -32,7 +33,8 @@ class MessageController extends Controller
     public function update(Request $request, $id)
     {
         $validated = $request->validate([
-            'message_body' => 'required|max:255'
+            'message_body' => 'required|max:255',
+            'user_id' =>'required'
         ]);
 
         $message = Message::findOrFail($id);

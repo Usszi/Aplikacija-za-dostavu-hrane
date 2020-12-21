@@ -15,12 +15,12 @@ class DatabaseSeeder extends Seeder
         $this->call([
             CitySeeder::class,
             DelivererSeeder::class,
-            UserSeeder::class,
             NeighborhoodSeeder::class,
-            OrderSeeder::class,
+            UserSeeder::class,
             RestaurantSeeder::class,
             StoreSeeder::class,
-            MessagesSeeder::class
+            MessagesSeeder::class,
+            OrderSeeder::class
         ]);
     }
 }

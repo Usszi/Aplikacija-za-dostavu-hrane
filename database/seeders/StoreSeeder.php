@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
-Use illuminate\Support\Str;
+Use Illuminate\Support\Str;
 
 
 class StoreSeeder extends Seeder

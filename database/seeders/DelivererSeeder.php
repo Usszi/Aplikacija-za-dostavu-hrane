@@ -5,7 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Carbon\Carbon;
-Use illuminate\Support\Str;
+Use Illuminate\Support\Str;
 
 class DelivererSeeder extends Seeder
 {
