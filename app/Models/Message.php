@@ -12,4 +12,5 @@ class Message extends Model
     protected $fillable = [
         'message_body'
     ];
+    public function users(){return $this->hasMany(User::class);}
 }

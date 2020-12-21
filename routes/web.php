@@ -8,6 +8,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\RestaurantController;
 use App\Http\Controllers\StoreController;
 use App\Http\Controllers\MessageController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ use App\Http\Controllers\MessageController;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
@@ -31,3 +33,6 @@ Route::resource('orders',OrderController::class);
 Route::resource('messages',MessageController::class);
 Route::resource('restaurants',RestaurantController::class);
 Route::resource('stores',StoreController::class);
+Route::resource('users', UserController::class);
+
+

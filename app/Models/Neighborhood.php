@@ -12,4 +12,8 @@ class Neighborhood extends Model
     protected $fillable = [
         'name'
     ];
+    public function city(){return $this->belongsTo(City::class);}
+    public function stores(){return $this->hasMany(Store::class);}
+    public function restaurants(){return $this->hasMany(Restaurant::class);}
+   
 }

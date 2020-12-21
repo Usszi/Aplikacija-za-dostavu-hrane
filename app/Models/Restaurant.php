@@ -14,4 +14,6 @@ class Restaurant extends Model
         'adress',
         'oib'
     ];
+    public function neighborhood(){return $this->belongsTo(Neighborhood::class);}
+    public function orders(){return $this->belongsToMany(Order::class);}
 }

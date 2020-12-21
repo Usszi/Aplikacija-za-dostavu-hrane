@@ -23,6 +23,8 @@ class User extends Authenticatable
         'adress',
         'gender',
     ];
+    public function orders(){return $this->belongsToMany(Order::class);}
+    public function messages(){return $this->belongsToMany(User::class,'messages','user_id','message_id');}
 
     /**
      * The attributes that should be hidden for arrays.

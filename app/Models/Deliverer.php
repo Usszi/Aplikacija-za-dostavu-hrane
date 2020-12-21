@@ -15,4 +15,5 @@ class Deliverer extends Model
         'gender',
         'date_of_birth'
     ];
+    public function orders(){return $this->belongsToMany(Order::class);}
 }

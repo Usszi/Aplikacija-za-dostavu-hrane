@@ -9,6 +9,7 @@
     <tr>
     <th scope="col">Id</th>
       <th scope="col">Name</th>
+      <th scope="col">Adress</th>
       <th scope="col">Oib</th>
       <th>Actions</th>
     </tr>
@@ -18,6 +19,7 @@
     <tr>
     <td>{{$store->id}}</td>
     <td>{{$store->name}}</td>
+    <td>{{$restaurant->adress}}</td>
     <td>{{$store->oib}}</td>
     <td>
     <a class="btn btn-outline-primary" href="{{ route('stores.show',['store' => $store->id]) }}">Details</a>

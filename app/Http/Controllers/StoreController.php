@@ -19,4 +19,42 @@ class StoreController extends Controller
         $store = Store::findOrFail($id);
         return view('stores.show',compact('store')); 
     }
+    public function edit($id)
+    {
+        $store = Store::findOrFail($id);
+        return view('stores.edit', compact('store'));
+    }
+
+    public function create()
+    {
+        return view('stores.create'); 
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'name' => 'required|max:255',
+            'adress' => 'required|max:255',
+            'oib' => 'required|max:255'
+        ]);
+
+        $store = Store::findOrFail($id);
+        $store->fill($validated);
+        $store->save();
+
+        return view('stores.show', compact('store'));
+    }
+
+
+    public function store(Request $request)
+    {
+        $validated = $request->validate([
+            'name' => 'required|unique:stores|max:255',
+            'adress' => 'required|unique:restaurants|max:255',
+            'oib' => 'required|unique:stores|max:255'
+        ]);
+        $store = Store::create($validated);
+        return view('stores.show', compact('store'));
+    }
+
 }
