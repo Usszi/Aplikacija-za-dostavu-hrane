@@ -20,7 +20,7 @@ class DelivererSeeder extends Seeder
             'name' => Str::random(10),
             'surname' => Str::random(10),
             'gender' => Str::random(10),
-            'date_of_birth'=> Carbon::random()
+            'date_of_birth'=> Carbon::now()
         ]);
     }
 }

@@ -25,6 +25,40 @@
             @endif
         </div>
 
+        <div class="form-group">
+            <label for="user-id">User id</label>
+            <input value="{{ @old('user_id') }}" name="user_id" type="text" class="form-control" id="user-id">
+            @if ($errors->has('user_id'))
+                <span class="text-danger">{{ $errors->first('user_id') }}</span>
+            @endif
+        </div>
+
+        <div class="form-group">
+            <label for="restaurant-id">Restaurant id</label>
+            <input value="{{ @old('restaurant_id') }}" name="restaurant_id" type="text" class="form-control" id="restaurant-id-id">
+            @if ($errors->has('restaurant_id'))
+                <span class="text-danger">{{ $errors->first('restaurant_id') }}</span>
+            @endif
+        </div>
+
+        <div class="form-group">
+            <label for="store-id">Store id</label>
+            <input value="{{ @old('store_id') }}" name="store_id" type="text" class="form-control" id="store-id">
+            @if ($errors->has('store_id'))
+                <span class="text-danger">{{ $errors->first('store_id') }}</span>
+            @endif
+        </div>
+
+        <div class="form-group">
+            <label for="deliverer-id">Deliverer id</label>
+            <input value="{{ @old('deliverer_id') }}" name="deliverer_id" type="text" class="form-control" id="deliverer-id">
+            @if ($errors->has('deliverer_id'))
+                <span class="text-danger">{{ $errors->first('deliverer_id') }}</span>
+            @endif
+        </div>
+
+
+
 
 
         

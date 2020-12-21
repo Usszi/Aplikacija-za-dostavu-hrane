@@ -52,7 +52,8 @@ class StoreController extends Controller
         $validated = $request->validate([
             'name' => 'required|unique:stores|max:255',
             'adress' => 'required|unique:restaurants|max:255',
-            'oib' => 'required|unique:stores|max:255'
+            'oib' => 'required|unique:stores|max:255',
+            'neighborhoor_id' => 'required'
         ]);
         $store = Store::create($validated);
         return view('stores.show', compact('store'));

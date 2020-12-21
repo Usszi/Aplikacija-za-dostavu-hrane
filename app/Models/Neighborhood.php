@@ -10,7 +10,8 @@ class Neighborhood extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name'
+        'name',
+        'city_id'
     ];
     public function city(){return $this->belongsTo(City::class);}
     public function stores(){return $this->hasMany(Store::class);}

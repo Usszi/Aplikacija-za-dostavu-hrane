@@ -18,6 +18,14 @@
             @endif
         </div>
 
+        <div class="form-group">
+            <label for="city-id">City id</label>
+            <input value="{{ @old('city_id') }}" name="city_id" type="text" class="form-control" id="city-id">
+            @if ($errors->has('city_id'))
+                <span class="text-danger">{{ $errors->first('city_id') }}</span>
+            @endif
+        </div>
+
         
         <button type="submit" class="btn btn-primary float-right">Save</button>
         <a href="{{ route('neighborhoods.index') }}" class="btn btn-link">Cancel</a>

@@ -57,7 +57,11 @@ class OrderController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required|unique:orders|max:255',
-            'quantity' => 'required|unique:orders|max:255'
+            'quantity' => 'required|unique:orders|max:255',
+            'user_id' =>'required',
+            'store_id' =>'required',
+            'restaurant_id' =>'required',
+            'deliverer_id' =>'required'
         ]);
         $order = Order::create($validated);
         return view('orders.show', compact('order'));

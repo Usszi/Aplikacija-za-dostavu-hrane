@@ -11,7 +11,12 @@ class Order extends Model
 
     protected $fillable = [
         'name',
-        'quantity'
+        'quantity',
+        'user_id',
+        'restaurant_id',
+        'store_id',
+        'deliverer_id'
+
     ];
     public function store(){return $this->belongsTo(Store::class);}
     public function restaurant(){return $this->belongsTo(Restaurant::class);}

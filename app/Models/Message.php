@@ -12,7 +12,8 @@ class Message extends Model
     protected $fillable = [
         'from_id',
         'to_id',
-        'message_body'
+        'message_body',
+        
     ];
 
     public function sender() { return $this->belongsTo(User::class, 'from_id'); }

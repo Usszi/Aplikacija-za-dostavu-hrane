@@ -33,6 +33,15 @@
             @endif
         </div>
 
+        <div class="form-group">
+            <label for="neighborhood-id">Neighborhood id</label>
+            <input value="{{ @old('neighborhood_id') }}" name="neighborhood_id" type="text" class="form-control" id="neighborhood-id">
+            @if ($errors->has('neighborhood_id'))
+                <span class="text-danger">{{ $errors->first('neighborhood_id') }}</span>
+            @endif
+        </div>
+
+
         
         <button type="submit" class="btn btn-primary float-right">Save</button>
         <a href="{{ route('stores.index') }}" class="btn btn-link">Cancel</a>

@@ -12,7 +12,8 @@ class Restaurant extends Model
     protected $fillable = [
         'name',
         'adress',
-        'oib'
+        'oib',
+        'neighborhood_id'
     ];
     public function neighborhood(){return $this->belongsTo(Neighborhood::class);}
     public function orders(){return $this->belongsToMany(Order::class);}

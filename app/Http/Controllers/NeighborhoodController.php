@@ -46,7 +46,9 @@ class NeighborhoodController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'name' => 'required|unique:cities|max:255'
+            'name' => 'required|unique:cities|max:255',
+            'city_id'=> 'required'
+
         ]);
         $neighborhood = Neighborhood::create($validated);
         return view('neighborhoods.show', compact('neighborhood'));
