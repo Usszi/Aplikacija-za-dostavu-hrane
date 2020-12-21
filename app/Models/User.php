@@ -24,8 +24,7 @@ class User extends Authenticatable
         'gender',
         'date_of_birth'
     ];
-    public function orders(){return $this->belongsToMany(Order::class);}
-    public function messages(){return $this->belongsToMany(User::class,'messages','user_id','message_id');}
+  
 
     /**
      * The attributes that should be hidden for arrays.
@@ -45,4 +44,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function orders(){return $this->belongsToMany(Order::class);}
+    public function messages(){return $this->belongsToMany(User::class,'messages','user_id','message_id');}
 }

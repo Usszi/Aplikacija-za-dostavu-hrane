@@ -16,6 +16,12 @@ class UserController extends Controller
         return view('users.index',compact('users')); 
     }
 
+    public function edit($id)
+    {
+        $user = User::findOrFail($id);
+        return view('users.edit', compact('user'));
+    }
+
     /* localhost:8000/users/create */
     public function create()
     {
@@ -43,7 +49,7 @@ class UserController extends Controller
     {
         $user = User::with(['orders'])
             ->findOrFail($id);
-        $friends = $user->messages()->paginate();
+        $messages = $user->messages()->paginate();
 
         return view('users.show', compact('user', 'messages'));
     }
@@ -58,14 +64,15 @@ class UserController extends Controller
             'surname' => 'required|max:255',
             'email' => 'required|max:255',
             'adress' => 'required|max:255',
-            'gender' => 'required|max:255'
+            'gender' => 'required|max:255',
+            'date_of_birth' => 'required|max:255'
         ]);
 
         $user = User::findOrFail($id);
         $user->fill($validated);
         $user->save();
 
-        return redirect()->route('users.show', ['user' => $user->id]);
+        return view('users.show', compact('user'));
     }
 
     /* DELETE localhost:8000/users/1 */
