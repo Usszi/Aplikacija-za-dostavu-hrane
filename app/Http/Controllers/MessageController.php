@@ -34,7 +34,8 @@ class MessageController extends Controller
     {
         $validated = $request->validate([
             'message_body' => 'required|max:255',
-            'user_id' =>'required'
+            'from_id' => 'required',
+            'to_id' => 'required'
         ]);
 
         $message = Message::findOrFail($id);
@@ -48,7 +49,9 @@ class MessageController extends Controller
     public function store(Request $request)
     {
         $validated = $request->validate([
-            'message_body' => 'required|unique:messages|max:255'
+            'message_body' => 'required|unique:messages|max:255',
+            'from_id' => 'required',
+            'to_id' => 'required'
         ]);
         $message = Message::create($validated);
         return view('messages.show', compact('message'));

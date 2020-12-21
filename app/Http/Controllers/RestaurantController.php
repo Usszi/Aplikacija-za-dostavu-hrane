@@ -53,7 +53,7 @@ class RestaurantController extends Controller
             'name' => 'required|unique:restaurants|max:255',
             'adress' => 'required|unique:restaurants|max:255',
             'oib' => 'required|unique:restaurants|max:255',
-            'neighborhoor_id' => 'required'
+            'neighborhood_id' => 'required'
         ]);
         $restaurant = Restaurant::create($validated);
         return view('restaurants.show', compact('restaurant'));

@@ -25,17 +25,16 @@
             @endif
         </div>
 
-        <!-- email -->
         <div class="form-group">
-            <label for="email">Email</label>
-            <input value="{{ @old('email')}}" name="email" type="text" class="form-control" id="email">
+            <label for="name">Email</label>
+            <input value="{{ @old('email') }}" name="email" type="text" class="form-control" id="email">
             @if ($errors->has('email'))
                 <span class="text-danger">{{ $errors->first('email') }}</span>
             @endif
         </div>
 
         <div class="form-group">
-            <label for="adress">Adress</label>
+            <label for="name">Adress</label>
             <input value="{{ @old('adress') }}" name="adress" type="text" class="form-control" id="adress">
             @if ($errors->has('adress'))
                 <span class="text-danger">{{ $errors->first('adress') }}</span>
@@ -43,7 +42,7 @@
         </div>
 
         <div class="form-group">
-            <label for="gender">Gender</label>
+            <label for="name">Gender</label>
             <input value="{{ @old('gender') }}" name="gender" type="text" class="form-control" id="gender">
             @if ($errors->has('gender'))
                 <span class="text-danger">{{ $errors->first('gender') }}</span>
@@ -57,6 +56,7 @@
                 <span class="text-danger">{{ $errors->first('date_of_birth') }}</span>
             @endif
         </div>
+
 
         
         <button type="submit" class="btn btn-primary float-right">Save</button>

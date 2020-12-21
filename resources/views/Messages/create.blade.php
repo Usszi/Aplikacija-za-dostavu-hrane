@@ -17,6 +17,23 @@
             @endif
         </div>
 
+        <div class="form-group">
+            <label for="from-id">From_id</label>
+            <input value="{{ @old('from_id') }}" name="from_id" type="text" class="form-control" id="from-id">
+            @if ($errors->has('from_id'))
+                <span class="text-danger">{{ $errors->first('from_id') }}</span>
+            @endif
+        </div>
+
+        <div class="form-group">
+            <label for="to-id">To_id</label>
+            <input value="{{ @old('to_id') }}" name="to_id" type="text" class="form-control" id="to-id">
+            @if ($errors->has('to_id'))
+                <span class="text-danger">{{ $errors->first('to_id') }}</span>
+            @endif
+        </div>
+
+
         
         <button type="submit" class="btn btn-primary float-right">Save</button>
         <a href="{{ route('messages.index') }}" class="btn btn-link">Cancel</a>

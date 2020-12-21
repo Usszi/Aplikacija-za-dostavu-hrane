@@ -28,7 +28,11 @@ class UserController extends Controller
         /* validacija podataka: ime mora biti manje od 255 znakova, biti unique, itd. */
         $validated = $request->validate([
             'name' => 'required|unique:users|max:255',
-            'native_name' => 'required|unique:users|max:255',
+            'surname' => 'required|unique:users|max:255',
+            'email' => 'required|unique:users|max:255',
+            'adress' => 'required|unique:users|max:255',
+            'gender' => 'required|unique:users|max:255',
+            'date_of_birth' => 'required|unique:users|max:255'
         ]);
         $user = User::create($validated);
         return view('users.show', compact('user'));

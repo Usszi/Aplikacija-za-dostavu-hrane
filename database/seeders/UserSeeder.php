@@ -16,34 +16,15 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        /* unos admina */
-        User::factory()->create([
-            'email' => 'admin@admin.com',
-            'password' => Hash::make('admin')
+        DB::table('deliverers')->insert([
+            'name' => Str::random(10),
+            'surname' => Str::random(10),
+            'email' => Str::random(10),
+            'adress' => Str::random(10),
+            'gender' => Str::random(10),
+            'date_of_birth'=> Carbon::now()
         ]);
 
-        /* unos random usera */
-        $numberOfUsers = env('SEED_USER_COUNT', 1000);
-        User::factory()
-            ->count($numberOfUsers)
-            ->create();
-        
-        $users = User::all();
-        
-        /* randomly spajanje prijatelja */
-        $users->each(function($user) use ($numberOfUsers) {
-            $today = Carbon::now();
-            $user->messages()->sync([
-                rand(1, $numberOfUsers) => ['accepted_at' => $today],
-                rand(1, $numberOfUsers) => ['accepted_at' => $today],
-
-                /* jos nije prihvaćen zahtjev za prijateljstvom */
-                rand(1, $numberOfUsers) => ['accepted_at' => null],
-                
-                rand(1, $numberOfUsers) => ['accepted_at' => $today],
-                rand(1, $numberOfUsers) => ['accepted_at' => $today]
-            ]);
-        });
 
     }
 }
