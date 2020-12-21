@@ -1,8 +1,9 @@
 <?php
 
 namespace Database\Seeders;
-
+use Illuminate\Support\Facades\DB;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Str;
 use App\Models\User;
 use Hash;
 use Carbon\Carbon;
@@ -16,7 +17,7 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('deliverers')->insert([
+        DB::table('users')->insert([
             'name' => Str::random(10),
             'surname' => Str::random(10),
             'email' => Str::random(10),

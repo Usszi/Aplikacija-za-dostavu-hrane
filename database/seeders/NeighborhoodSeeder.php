@@ -17,7 +17,7 @@ class NeighborhoodSeeder extends Seeder
     {
         DB::table('neighborhoods')->insert([
             'name' => Str::random(10),
-            'role_id'=> 1
+            'city_id'=> 1
         ]);
     }
 }

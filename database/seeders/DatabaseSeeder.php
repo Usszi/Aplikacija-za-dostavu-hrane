@@ -16,10 +16,10 @@ class DatabaseSeeder extends Seeder
             CitySeeder::class,
             DelivererSeeder::class,
             NeighborhoodSeeder::class,
+            MessageSeeder::class,
             UserSeeder::class,
             RestaurantSeeder::class,
             StoreSeeder::class,
-            MessagesSeeder::class,
             OrderSeeder::class
         ]);
     }
