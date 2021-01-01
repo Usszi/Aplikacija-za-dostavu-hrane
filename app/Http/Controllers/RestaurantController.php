@@ -22,7 +22,8 @@ class RestaurantController extends Controller
     public function edit($id)
     {
         $restaurant = Restaurant::findOrFail($id);
-        return view('restaurants.edit', compact('restaurant'));
+        $neighborhoods = Neighborhood::pluck('name','id');
+        return view('restaurants.edit', compact('restaurant','neighboorhoods'));
     }
 
     public function create()

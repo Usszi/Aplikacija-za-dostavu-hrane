@@ -21,6 +21,7 @@ use App\Http\Controllers\UserController;
 |
 */
 
+Route::middleware(['auth'])->group(function () {
 
 Route::get('/', function () {
     return view('welcome');
@@ -34,5 +35,5 @@ Route::resource('messages',MessageController::class);
 Route::resource('restaurants',RestaurantController::class);
 Route::resource('stores',StoreController::class);
 Route::resource('users', UserController::class);
-
-
+});
+require __DIR__.'/auth.php';

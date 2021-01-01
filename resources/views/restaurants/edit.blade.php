@@ -34,6 +34,12 @@
             @endif
         </div>
 
+        <div class="form-group">
+            <label for="neighborhood">Neighborhood</label>
+            {{ Form::select('neighborhood_id', $neighborhoods, $restaurant->neighborhood_id, ['class' => 'form-control', 'id' => 'neighborhood']) }}
+        </div>
+
+
         <button type="submit" class="btn btn-primary float-right">Save</button>
         <a href="{{ route('restaurants.index') }}" class="btn btn-link">Cancel</a>
     </form>
