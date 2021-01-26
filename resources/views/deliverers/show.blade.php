@@ -10,5 +10,7 @@
  <li>Date of birth: {{ $deliverer->date_of_birth }}</li>
  </ul>
  <a href="{{ route('deliverers.index') }}"class="btn btn-outline-primary">Back</a>
+ <button type="submit" class="btn btn-danger">Delete</button>
+ <button type="submit" onclick="confirm('Are you sure?')" class="btn btn-danger">Delete</button>
  </div>
 @endsection

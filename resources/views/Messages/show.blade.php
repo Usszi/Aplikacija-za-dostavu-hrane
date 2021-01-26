@@ -8,5 +8,7 @@
 
  </ul>
  <a href="{{ route('messages.index') }}"class="btn btn-outline-primary">Back</a>
+ <button type="submit" class="btn btn-danger">Delete</button>
+ <button type="submit" onclick="confirm('Are you sure?')" class="btn btn-danger">Delete</button>
  </div>
 @endsection
